@@ -1,0 +1,58 @@
+{
+  "name": "@eluvio/elv-starter-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Eluvio, Inc.",
+  "license": "MIT",
+  "scripts": {
+    "serve": "webpack-dev-server --hot --host 0.0.0.0",
+    "build": "rm -rf dist/* && webpack-cli --mode production --no-devtool",
+    "lint": "npm run fix-scss ; npm run fix-js",
+    "fix-scss": "sass-lint-auto-fix -c .scss-lint.yml",
+    "lint-js": "./node_modules/.bin/eslint \"src/**/*.js\"",
+    "fix-js": "npm run lint-js -- --fix"
+  },
+  "pre-commit": {
+    "run": [
+      "lint",
+      "build",
+      "add-build"
+    ]
+  },
+  "dependencies": {
+    "elv-components-js": "git+https://github.com/eluv-io/elv-components-js.git#media-apps",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-react": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "eslint": "7.32.0",
+    "eslint-plugin-react": "^7.30.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "process": "^0.11.10",
+    "sass": "^1.52.1",
+    "sass-lint-auto-fix": "^0.21.2",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "5.72.1",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.9.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}

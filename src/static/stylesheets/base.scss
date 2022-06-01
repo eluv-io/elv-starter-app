@@ -1,0 +1,46 @@
+* {
+  -webkit-overflow-scrolling: touch;
+
+  ::-webkit-scrollbar {
+    opacity: 1;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $elv-color-bg-dark;
+    opacity: 1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $elv-color-darkgray;
+    opacity: 1;
+  }
+}
+
+html, body {
+  color: $elv-color-text-black;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  * {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+  }
+}
+
+html,
+body,
+.app,
+.app-container {
+  background-color: $elv-color-bg-white;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  max-width: 100%;
+  width: 100%
+}
+
+.app-container {
+  flex-direction: row;
+}
