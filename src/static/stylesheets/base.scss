@@ -17,7 +17,8 @@
   }
 }
 
-html, body {
+html,
+body {
   color: $elv-color-text-black;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
@@ -38,7 +39,7 @@ body,
   flex-direction: column;
   height: 100%;
   max-width: 100%;
-  width: 100%
+  width: 100%;
 }
 
 .app-container {

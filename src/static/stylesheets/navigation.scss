@@ -38,67 +38,7 @@
     }
   }
 
-  &-sub {
-    background: $elv-color-darkgray;
-    border-left: 1px solid $elv-color-darkergray;
-    min-width: 200px;
-  }
-
   @media screen and (max-width: 1000px) {
     display: none;
-  }
-}
-
-.navigation-list {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  user-select: none;
-  width: 100%;
-
-  &-link {
-    border-left: 3px solid transparent;
-    cursor: pointer;
-    padding: 20px;
-
-    &:hover {
-      border-left: 3px solid lighten($elv-color-blue, 20%);
-    }
-  }
-}
-
-.navigation-header {
-  align-items: center;
-  display: flex;
-
-  &-link {
-    @include elv-ellipsis;
-
-    border: 1px solid $elv-color-blue;
-    border-radius: 3px;
-    color: $elv-color-blue;
-    cursor: pointer;
-    font-weight: 300;
-    height: 32px;
-    max-width: 250px;
-    padding: 5px 10px;
-  }
-
-  &-link-active {
-    border: 1px solid $elv-color-black;
-    color: $elv-color-black;
-  }
-
-  &-link-separator {
-    content: "/";
-    padding: 0 10px;
-
-    &::before {
-      content: "/";
-    }
-
-    &:last-child {
-      display: none;
-    }
   }
 }
