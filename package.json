@@ -1,15 +1,16 @@
 {
   "name": "@eluvio/elv-starter-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project template for creating an Eluvio application using React, Mobx, elv-client-js, elv-media-wallet, and elv-components-js.",
   "main": "index.js",
   "author": "Eluvio, Inc.",
   "license": "MIT",
   "scripts": {
     "serve": "webpack-dev-server --hot --host 0.0.0.0",
     "build": "rm -rf dist/* && webpack-cli --mode production --no-devtool",
-    "lint": "npm run fix-scss ; npm run fix-js",
+    "lint": "npm run fix-scss ; npm run lint-scss ; npm run fix-js",
     "fix-scss": "sass-lint-auto-fix -c .scss-lint.yml",
+    "lint-scss": "stylelint \"src/**/*.scss\"",
     "lint-js": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "fix-js": "npm run lint-js -- --fix"
   },
@@ -22,6 +23,8 @@
   },
   "dependencies": {
     "elv-components-js": "git+https://github.com/eluv-io/elv-components-js.git#media-apps",
+    "mobx": "^6.6.0",
+    "mobx-react": "^7.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0"
@@ -44,6 +47,8 @@
     "sass-lint-auto-fix": "^0.21.2",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^14.8.5",
+    "stylelint-config-standard-scss": "^4.0.0",
     "svg-inline-loader": "^0.8.2",
     "webpack": "5.72.1",
     "webpack-cli": "4.9.2",
