@@ -4,12 +4,9 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  // entry: "./src/index.js",
   target: "web",
   output: {
     chunkFilename: "[name].[contenthash].bundle.js",
-    // filename: "[name].js",
-    // path: Path.resolve(__dirname, "dist")
   },
   devServer: {
     allowedHosts: "all",
