@@ -1,6 +1,6 @@
 {
   "name": "@eluvio/elv-starter-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A project template for creating an Eluvio application using React, Mobx, elv-client-js, elv-media-wallet, and elv-components-js.",
   "main": "index.js",
   "author": "Eluvio, Inc.",
