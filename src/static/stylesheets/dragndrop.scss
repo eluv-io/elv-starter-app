@@ -1,0 +1,48 @@
+.-elv-dnd {
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    &-item {
+
+        width: 180px;
+        height: 180px;
+        border: 2px solid red;
+        background-color: #cccccc;
+        margin: 5px;
+
+        &-dragging {
+            width: 180px;
+            height: 180px;
+            border: 2px solid red;
+            background-color: #cccccc;
+            // margin: 10px;
+            opacity: 0.3;
+            z-index: 100;
+        }
+
+        &-container {
+
+        }
+
+        &-handle {
+
+        }
+
+        &-info {
+            min-width: 30px;
+            min-height: 20px;
+            border: 1px solid black;
+        }
+
+    }
+
+    &-overlay {
+        width: 180px;
+        height: 180px;
+        background-color: red;
+    }
+}
