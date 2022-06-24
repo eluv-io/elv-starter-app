@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Routes from "./router";
-import {HashRouter} from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import NavigationBar from "Components/NavigationBar";
 import "Assets/stylesheets/app.scss";

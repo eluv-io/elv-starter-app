@@ -22,6 +22,8 @@
     ]
   },
   "dependencies": {
+    "@dnd-kit/core": "^6.0.5",
+    "@dnd-kit/sortable": "^7.0.1",
     "elv-components-js": "git+https://github.com/eluv-io/elv-components-js.git#media-apps",
     "mobx": "^6.6.0",
     "mobx-react": "^7.5.0",
