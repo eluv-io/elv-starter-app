@@ -3,7 +3,7 @@ import {Routes, Route} from "react-router-dom";
 
 import GettingStarted from "Components/GettingStarted";
 import Components from "Components/Components";
-import Home from "Components/Home"
+import Home from "Components/Home";
 import Navbar from "Components/Navbar";
 import { ElvWalletClient } from "@eluvio/elv-wallet-client"; 
 
@@ -31,11 +31,11 @@ const AppRoutes = React.memo(() => {
       }
       client.Destroy();
       setLoggedIn(true); 
-      console.log("user has signed in")
-    })
+      console.log("user has signed in");
+    });
 
 
-  }
+  };
 
   const Logout = async () => {
     await walletClient.SignOut(); 
@@ -43,18 +43,18 @@ const AppRoutes = React.memo(() => {
     setWalletClient({});
     setProfile({});
     setLoggedIn(false);
-  }
+  };
 
   return (
     <div>
       {loggedIn && <Navbar />}
-    <Routes>
-      {!loggedIn && 
+      <Routes>
+        {!loggedIn && 
       <Route exact={true} path="/" element = {<GettingStarted Login = {Login} />} /> }
-      {loggedIn && <Route exact={true} path="/" element = {<Home name = {profile.name} Logout = {Logout}/>} /> }
-      <Route path="/components" element={<Components />} />
+        {loggedIn && <Route exact={true} path="/" element = {<Home name = {profile.name} Logout = {Logout}/>} /> }
+        <Route path="/components" element={<Components />} />
 
-    </Routes>
+      </Routes>
     </div>
   );
 });

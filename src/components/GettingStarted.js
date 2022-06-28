@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components"; 
-import './GettingStarted.css'
-import logo from './assets/logo.png'
+import "./GettingStarted.css";
+import logo from "./assets/logo.png";
 
 
 
@@ -37,10 +37,10 @@ margin: auto;
   return (
     <div >
  
-    <img src = {logo} style = {{zIndex: 100, paddingTop: "50px", paddingLeft: "25px"}}/>
-     <div style = {{height: "800px"}}><PrimaryButton onClick = {
+      <img src = {logo} style = {{zIndex: 100, paddingTop: "50px", paddingLeft: "25px"}}/>
+      <div style = {{height: "800px"}}><PrimaryButton onClick = {
         Login
-        }><p>Login</p></PrimaryButton> </div>
+      }><p>Login</p></PrimaryButton> </div>
     </div>
   
   );

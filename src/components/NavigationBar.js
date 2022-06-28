@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import "Navigationbar.css"
+import "Navigationbar.css";
 import {ImageIcon} from "elv-components-js";
 import Logo from "Assets/images/logo.svg";
 
@@ -11,7 +11,7 @@ const NavigationBar = () => {
         <ImageIcon icon={Logo} title="Eluvio" className="navigation-logo" />
       </NavLink>
       <li><NavLink className="navigation-link" to="/">Getting Started</NavLink> </li>
-     <li> <NavLink className="navigation-link" to="/home">Home</NavLink> </li>
+      <li> <NavLink className="navigation-link" to="/home">Home</NavLink> </li>
       <li><NavLink className="navigation-link" to="/components">Components</NavLink> </li>
     </nav>
   );
