@@ -1,12 +1,12 @@
-.navigation {
-  background: $elv-color-darkergray;
+/*.navigation {
+  background: rgba(13,13,13,1);
   display: flex;
-  flex-direction: column;
-  min-width: 150px;
+  flex-direction: row;
+  min-width: 100%;
   padding: 20px 0;
   user-select: none;
-  width: 150px;
-  z-index: 100;
+  width: 100%;
+  z-index: 0;
 
   &-link {
     align-items: center;
@@ -28,7 +28,7 @@
 
   &-logo-container {
     cursor: pointer;
-    padding: 10px 20px 30px;
+    padding: 0px 20px 0px;
   }
 
   &-logo {
@@ -37,8 +37,10 @@
       stroke: $elv-color-white;
     }
   }
-
+/*
   @media screen and (max-width: 1000px) {
     display: none;
   }
+
 }
+  */

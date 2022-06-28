@@ -1,0 +1,24 @@
+.appBar {
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    width: 100%;
+}
+
+.navbar {
+    background-color: gray;
+}
+
+p {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    margin: auto;
+    font-size: 30px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: left;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+}
+
