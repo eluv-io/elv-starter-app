@@ -1,21 +1,29 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
-
+import "../static/stylesheets/app.scss"
 import GettingStarted from "Components/GettingStarted";
 import Components from "Components/Components";
 import Home from "Components/Home";
 import Navbar from "Components/Navbar";
 import { ElvWalletClient } from "@eluvio/elv-wallet-client"; 
-
-
+import rootStore from "../stores/index.js"
+import * as Actions from "../actions/Actions"
 
 const AppRoutes = React.memo(() => {
-
   const [profile, setProfile] = useState({});
-  const [loggedIn,setLoggedIn] = useState(false);
   const [walletClient, setWalletClient] = useState({});
+  const [loggedIn, setLoggedIn] = useState(false);
 
-
+  //Define event listener for changes to loggedIn state stored in rootStore
+  rootStore.on("change", () => {
+    let newState = rootStore.getLoggedIn()
+    setLoggedIn(newState);
+    if(newState) {
+      console.log("user has logged on")
+    } else {
+      console.log("user has logged off")
+    }
+  });
 
   const Login = async() => {
     const client =  await ElvWalletClient.InitializePopup({
@@ -30,19 +38,15 @@ const AppRoutes = React.memo(() => {
         setWalletClient(client);
       }
       client.Destroy();
-      setLoggedIn(true); 
-      console.log("user has signed in");
+      Actions.loginAction();
     });
-
-
   };
 
   const Logout = async () => {
     await walletClient.SignOut(); 
-    console.log("user has signed out");
     setWalletClient({});
     setProfile({});
-    setLoggedIn(false);
+    Actions.logoutAction();
   };
 
   return (
@@ -53,7 +57,6 @@ const AppRoutes = React.memo(() => {
       <Route exact={true} path="/" element = {<GettingStarted Login = {Login} />} /> }
         {loggedIn && <Route exact={true} path="/" element = {<Home name = {profile.name} Logout = {Logout}/>} /> }
         <Route path="/components" element={<Components />} />
-
       </Routes>
     </div>
   );

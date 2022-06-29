@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import "Navigationbar.css";
+import "../static/stylesheets/navbar.scss";
 import {ImageIcon} from "elv-components-js";
 import Logo from "Assets/images/logo.svg";
 
