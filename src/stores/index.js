@@ -1,38 +1,33 @@
-import {EventEmitter} from "events";
-import dispatcher from "../dispatcher";
+import { makeObservable, observable, action } from "mobx";
 
-class RootStore extends EventEmitter {
+class RootStoreImpl {
+    loggedIn = false;
+    userProfile = {}
+    walletClient = {};
+
     constructor() {
-        super();
+        makeObservable(this,{
+            loggedIn: observable,
+            userProfile: observable,
+            walletClient: observable,
+            login: action,
+            logout: action
+        })
+    }
+
+    login(prof,client) {
+        this.loggedIn = true;
+        this.userProfile = prof;
+        this.walletClient = client;
+    }
+
+    logout() {
         this.loggedIn = false;
-    }
-
-    setLoggedIn = (bool) => {
-        if(this.loggedIn === bool) {
-            //no change to account for
-        } else {
-            this.loggedIn = bool;
-            this.emit("change");
-        }
-    }
-
-    getLoggedIn = () => {
-        return this.loggedIn;
-    }
-
-    handleAction = (action) => {
-        console.log("rootStore received an action ", action);
-        if(action.type === "LOG_IN") {
-            this.setLoggedIn(true);
-        } else if(action.type === "LOG_OUT") {
-            this.setLoggedIn(false); 
-        } else {
-            //do nothing
-        }
+        this.userProfile = {};
+        this.walletClient = {};
     }
 }
 
-const rootStore = new RootStore;
-dispatcher.register(rootStore.handleAction.bind(rootStore));
-window.rootStore = rootStore;
-export default rootStore;
+export const RootStore = new RootStoreImpl();
+
+
