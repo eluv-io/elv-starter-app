@@ -1,8 +1,15 @@
 import React from "react";
+import logo from "./assets/logo.png";
+import {Action} from "elv-components-js";
 
-const GettingStarted = () => {
+const GettingStarted = ({Login}) => {
   return (
-    <div>Getting Started</div>
+    <div >
+      <img src={logo} />
+      <div className="spacer">
+        <Action label="login" title="Login" type="button" className="primarybtn" onClick={Login} children={<p className="btntext">Login</p>} />
+     </div>  
+    </div>
   );
 };
 

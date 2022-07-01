@@ -1,5 +1,84 @@
-@import "~elv-components-js/src/stylesheets/styles";
+@import "../../../node_modules/elv-components-js/src/stylesheets/styles.scss";
 
 @import "base";
 @import "navigation";
 @import "reset";
+
+div {
+    background-color: $elv-color-black;
+    width: 100%;
+}
+
+.btntext {
+    position: absolute;
+    left: 115px;
+    bottom: 5px;
+    color: $elv-color-white;
+    margin-left: 100px;
+    margin: auto;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+img {
+    z-index: 100;
+    padding-top: 50px;
+    padding-left: 25px;
+}
+
+.primarybtn {
+    position: absolute;
+    bottom: 400px;
+    left: 35px;
+    display: flex;
+    height: 56px;
+    width: 328px;
+}
+
+.spacer {
+    height: 800px;
+}
+
+.spacer1 {
+    height: 20px;
+}
+
+.nav {
+    background-color: $elv-color-darkgray;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+     padding: 0 1rem;
+}
+
+.nav ul {
+    width: 100%;
+    display: flex;
+    gap: 3rem;
+    padding-top: 30px;
+    padding-left: 25px;
+  }
+
+  .nav a {
+    color: $elv-color-text-white;
+    font-family: sans-serif;
+    font-size: 32px;
+  }
+
+.hometext {
+    color: $elv-color-text-white;
+    font-size: 28px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: sans-serif;
+}
+
+.linktext {
+    color: $elv-color-blue;
+    font-size: 28px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: sans-serif;
+}

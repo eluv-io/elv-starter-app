@@ -22,6 +22,7 @@
     ]
   },
   "dependencies": {
+    "@eluvio/elv-wallet-client": "^1.0.17",
     "elv-components-js": "git+https://github.com/eluv-io/elv-components-js.git#media-apps",
     "mobx": "^6.6.0",
     "mobx-react": "^7.5.0",
