@@ -16,10 +16,14 @@
   ],
   "rules": {
     "eol-last": "warn",
-    "no-case-declarations": "off",
-    "no-undef": "off",
-    "no-useless-escape": "off",
-    "template-curly-spacing": "off",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": ["TemplateLiteral"]
+      }
+    ],
     "keyword-spacing": [
       "warn", {
         "before": true,
@@ -32,18 +36,19 @@
           "catch": { "after": false }
         }
       }],
-    "indent": [
-      "error",
-      2,
-      {
-        "SwitchCase": 1,
-        "ignoredNodes": ["TemplateLiteral"]
-      }
-    ],
     "linebreak-style": [
       "error",
       "unix"
     ],
+    "no-case-declarations": "off",
+    "no-multiple-empty-lines": [
+      "warn", {
+        "max": 1
+      }
+    ],
+    "no-trailing-spaces": "warn",
+    "no-undef": "off",
+    "no-useless-escape": "off",
     "quotes": [
       "error",
       "double"
@@ -54,6 +59,7 @@
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "template-curly-spacing": "off"
   }
 }

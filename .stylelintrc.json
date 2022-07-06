@@ -1,23 +1,26 @@
 {
   "extends": ["stylelint-config-standard-scss"],
-  "ignoreFiles": ["src/static/stylesheets/reset.scss"],
   "plugins": [
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
-    "string-quotes": "double",
     "at-rule-empty-line-before": null,
+    "declaration-colon-space-before": "never",
     "max-nesting-depth": 3,
+    "max-empty-lines": 1,
+    "no-missing-end-of-source-newline": true,
     "number-leading-zero": null,
+    "selector-attribute-operator-space-before": "never",
     "selector-class-pattern": null,
+    "string-quotes": "double",
     "plugin/selector-bem-pattern": {
+      "implicitComponents": "static/**/*.scss",
       "preset": "bem",
       "componentName": "[A-Z]+",
       "componentSelectors": {
         "initial": "^\\.{componentName}(?:-[a-z]+)?$",
         "combined": "^\\.combined-{componentName}-[a-z]+$"
-      },
-      "implicitComponents": "static/**/*.scss"
+      }
     }
   }
 }
