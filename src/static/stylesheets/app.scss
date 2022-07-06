@@ -1,84 +1,84 @@
-@import "../../../node_modules/elv-components-js/src/stylesheets/styles.scss";
+@import "../../../node_modules/elv-components-js/src/stylesheets/styles";
 
 @import "base";
 @import "navigation";
 @import "reset";
 
 div {
-    background-color: $elv-color-black;
-    width: 100%;
+  background-color: $elv-color-black;
+  width: 100%;
 }
 
 .btntext {
-    position: absolute;
-    left: 115px;
-    bottom: 5px;
-    color: $elv-color-white;
-    margin-left: 100px;
-    margin: auto;
-    font-size: 30px;
-    font-family: sans-serif;
+  bottom: 5px;
+  color: $elv-color-white;
+  font-family: sans-serif;
+  font-size: 30px;
+  left: 115px;
+  margin: auto;
+  margin-left: 100px;
+  position: absolute;
 }
 
 img {
-    z-index: 100;
-    padding-top: 50px;
-    padding-left: 25px;
+  padding-left: 25px;
+  padding-top: 50px;
+  z-index: 100;
 }
 
 .primarybtn {
-    position: absolute;
-    bottom: 400px;
-    left: 35px;
-    display: flex;
-    height: 56px;
-    width: 328px;
+  bottom: 400px;
+  display: flex;
+  height: 56px;
+  left: 35px;
+  position: absolute;
+  width: 328px;
 }
 
 .spacer {
-    height: 800px;
+  height: 800px;
 }
 
 .spacer1 {
-    height: 20px;
+  height: 20px;
 }
 
 .nav {
-    background-color: $elv-color-darkgray;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-     padding: 0 1rem;
+  align-items: stretch;
+  background-color: $elv-color-darkgray;
+  display: flex;
+  gap: 2rem;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 .nav ul {
-    width: 100%;
-    display: flex;
-    gap: 3rem;
-    padding-top: 30px;
-    padding-left: 25px;
-  }
+  display: flex;
+  gap: 3rem;
+  padding-left: 25px;
+  padding-top: 30px;
+  width: 100%;
+}
 
-  .nav a {
-    color: $elv-color-text-white;
-    font-family: sans-serif;
-    font-size: 32px;
-  }
+.nav a {
+  color: $elv-color-text-white;
+  font-family: sans-serif;
+  font-size: 32px;
+}
 
 .hometext {
-    color: $elv-color-text-white;
-    font-size: 28px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-family: sans-serif;
+  color: $elv-color-text-white;
+  font-family: sans-serif;
+  font-size: 28px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .linktext {
-    color: $elv-color-blue;
-    font-size: 28px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-family: sans-serif;
+  color: $elv-color-blue;
+  font-family: sans-serif;
+  font-size: 28px;
+  margin-left: 30px;
+  margin-right: 30px;
 }

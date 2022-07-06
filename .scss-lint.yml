@@ -13,3 +13,5 @@ rules:
   quotes:
     - 1
     - style: double
+  indentation:
+    - 2

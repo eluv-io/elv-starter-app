@@ -12,14 +12,8 @@
     "fix-scss": "sass-lint-auto-fix -c .scss-lint.yml",
     "lint-scss": "stylelint \"src/**/*.scss\"",
     "lint-js": "./node_modules/.bin/eslint \"src/**/*.js\"",
-    "fix-js": "npm run lint-js -- --fix"
-  },
-  "pre-commit": {
-    "run": [
-      "lint",
-      "build",
-      "add-build"
-    ]
+    "fix-js": "npm run lint-js -- --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@eluvio/elv-wallet-client": "^1.0.17",
@@ -42,6 +36,7 @@
     "eslint-plugin-react": "^7.30.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
     "image-webpack-loader": "^8.1.0",
     "process": "^0.11.10",
     "sass": "^1.52.1",

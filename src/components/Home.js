@@ -2,8 +2,8 @@ import React from "react";
 import {Action} from "elv-components-js";
 
 const Home = ({name, Logout}) => {
-      
-return (
+
+  return (
     <>
       <div className="spacer1"/>
       <p className="hometext">Hello {name.split(" ")[0]},</p>

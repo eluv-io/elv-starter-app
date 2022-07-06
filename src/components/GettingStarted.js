@@ -8,7 +8,7 @@ const GettingStarted = ({Login}) => {
       <img src={logo} />
       <div className="spacer">
         <Action label="login" title="Login" type="button" className="primarybtn" onClick={Login} children={<p className="btntext">Login</p>} />
-     </div>  
+      </div>
     </div>
   );
 };

@@ -1,13 +1,12 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
-import "../static/stylesheets/app.scss"
+import "../static/stylesheets/app.scss";
 import GettingStarted from "Components/GettingStarted";
 import Components from "Components/Components";
 import Home from "Components/Home";
 import Navbar from "Components/Navbar";
-import { ElvWalletClient } from "@eluvio/elv-wallet-client"; 
-import { observer } from 'mobx-react';
-
+import { ElvWalletClient } from "@eluvio/elv-wallet-client";
+import { observer } from "mobx-react";
 
 const AppRoutes = observer(({RootStore}) => {
   const Login = async() => {
@@ -25,7 +24,7 @@ const AppRoutes = observer(({RootStore}) => {
   };
 
   const Logout = async () => {
-    await RootStore.walletClient.SignOut(); 
+    await RootStore.walletClient.SignOut();
     RootStore.logout();
   };
 
@@ -33,7 +32,7 @@ const AppRoutes = observer(({RootStore}) => {
     <div>
       {RootStore.loggedIn && <Navbar />}
       <Routes>
-        {!RootStore.loggedIn && 
+        {!RootStore.loggedIn &&
       <Route exact={true} path="/" element = {<GettingStarted Login = {Login} />}/> }
         {RootStore.loggedIn && <Route exact={true} path="/" element = {<Home name = {RootStore.userProfile.name} Logout = {Logout}/>}/> }
         <Route path="/components" element={<Components/>}/>
