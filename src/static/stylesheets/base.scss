@@ -7,19 +7,19 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: $elv-color-bg-dark;
+    background: $gray3;
     opacity: 1;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: $elv-color-darkgray;
+    background-color: $gray3;
     opacity: 1;
   }
 }
 
 html,
 body {
-  color: $elv-color-text-black;
+  color: $black;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -33,7 +33,7 @@ html,
 body,
 .app,
 .app-container {
-  background-color: $elv-color-bg-light;
+  background-color: $white;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -49,4 +49,22 @@ body,
 main {
   padding: 2rem;
   width: 100%;
+}
+
+.primary-button {
+  background-color: $blue;
+  border: 1px solid rgba($blue, 70%);
+  color: $white;
+  cursor: pointer;
+  min-height: 35px;
+  min-width: 7.5rem;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
+  }
 }

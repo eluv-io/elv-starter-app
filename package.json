@@ -1,7 +1,7 @@
 {
   "name": "@eluvio/elv-starter-app",
   "version": "1.0.2",
-  "description": "A project template for creating an Eluvio application using React, Mobx, elv-client-js, elv-media-wallet, and elv-components-js.",
+  "description": "A project template for creating an Eluvio application using React, Mobx, and elv-client-js.",
   "main": "index.js",
   "author": "Eluvio, Inc.",
   "license": "MIT",
@@ -17,8 +17,6 @@
   },
   "dependencies": {
     "@eluvio/elv-client-js": "^3.2.30",
-    "@eluvio/elv-wallet-client": "^1.0.17",
-    "elv-components-js": "git+https://github.com/eluv-io/elv-components-js.git#media-apps",
     "mobx": "^6.6.0",
     "mobx-react": "^7.5.0",
     "react": "^18.1.0",

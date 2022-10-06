@@ -1,5 +1,4 @@
 import React from "react";
-import {Action} from "elv-components-js";
 import {observer} from "mobx-react";
 
 const Home = observer(() => {
@@ -7,14 +6,13 @@ const Home = observer(() => {
     <>
       <div>You are logged out.</div>
       <div>
-        <Action
-          label="login"
-          title="Login"
+        <button
           type="button"
+          className="primary-button"
           onClick={() => rootStore.Authenticate()}
         >
-          Login
-        </Action>
+          Log in
+        </button>
       </div>
     </>
   );
@@ -23,7 +21,13 @@ const Home = observer(() => {
     <>
       <div>You are logged in.</div>
       <div>
-        <Action onClick={() => rootStore.Logout()}>Log out</Action>
+        <button
+          type="button"
+          className="primary-button"
+          onClick={() => rootStore.Logout()}
+        >
+          Log out
+        </button>
       </div>
     </>
   );

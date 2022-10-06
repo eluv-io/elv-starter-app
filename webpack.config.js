@@ -61,7 +61,6 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules\/(?!elv-components-js)/,
         use: {
           loader: "babel-loader",
           options: {
