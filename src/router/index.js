@@ -4,7 +4,6 @@ import "../static/stylesheets/app.scss";
 import GettingStarted from "Components/GettingStarted";
 import Components from "Components/Components";
 import Home from "Components/Home";
-import Navbar from "Components/Navbar";
 import { ElvWalletClient } from "@eluvio/elv-wallet-client";
 import { observer } from "mobx-react";
 
@@ -29,13 +28,26 @@ const AppRoutes = observer(() => {
   };
 
   return (
-    <div>
-      {rootStore.loggedIn && <Navbar />}
+    <div className="main">
+      { rootStore.loggedIn && "You are logged in." }
       <Routes>
-        {!rootStore.loggedIn &&
-      <Route exact={true} path="/" element = {<GettingStarted Login = {Login} />}/> }
-        {rootStore.loggedIn && <Route exact={true} path="/" element = {<Home name = {rootStore.userProfile.name} Logout = {Logout}/>}/> }
-        <Route path="/components" element={<Components/>}/>
+        {
+          !rootStore.loggedIn &&
+          <Route
+            exact={true}
+            path="/"
+            element={<GettingStarted Login={Login} />}
+          />
+        }
+        {
+          rootStore.loggedIn &&
+          <Route
+            exact={true}
+            path="/"
+            element={<Home name={rootStore.userProfile.name} Logout={Logout}/>}
+          />
+        }
+        <Route path="/components" element={<Components/>} />
       </Routes>
     </div>
   );

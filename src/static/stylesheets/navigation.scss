@@ -1,73 +1,29 @@
-.btntext {
-  bottom: 5px;
-  color: $elv-color-white;
-  font-family: sans-serif;
-  font-size: 30px;
-  left: 115px;
-  margin: auto;
-  margin-left: 100px;
-  position: absolute;
-}
-
-img {
-  padding-left: 25px;
-  padding-top: 50px;
-  z-index: 100;
-}
-
-.primarybtn {
-  bottom: 400px;
+.navigation {
+  background: $elv-color-darkergray;
   display: flex;
-  height: 56px;
-  left: 35px;
-  position: absolute;
-  width: 328px;
-}
+  flex-direction: column;
+  min-width: 150px;
+  padding: 20px 0;
+  user-select: none;
+  width: 150px;
 
-.spacer {
-  height: 800px;
-}
+  &__link {
+    align-items: center;
+    color: $elv-color-white;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    padding: 0 20px;
+    position: relative;
 
-.spacer1 {
-  height: 20px;
-}
+    &-back {
+      background-color: $elv-color-lightgray;
+      margin-bottom: 20px;
+    }
 
-.nav {
-  align-items: stretch;
-  background-color: $elv-color-darkgray;
-  display: flex;
-  gap: 2rem;
-  height: 80px;
-  justify-content: space-between;
-  padding: 0 1rem;
-}
-
-.nav ul {
-  display: flex;
-  gap: 3rem;
-  padding-left: 25px;
-  padding-top: 30px;
-  width: 100%;
-}
-
-.nav a {
-  color: $elv-color-text-white;
-  font-family: sans-serif;
-  font-size: 32px;
-}
-
-.hometext {
-  color: $elv-color-text-white;
-  font-family: sans-serif;
-  font-size: 28px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.linktext {
-  color: $elv-color-blue;
-  font-family: sans-serif;
-  font-size: 28px;
-  margin-left: 30px;
-  margin-right: 30px;
+    &.active {
+      background: rgba($elv-color-white, 80%);
+      color: $elv-color-darkgray;
+    }
+  }
 }
