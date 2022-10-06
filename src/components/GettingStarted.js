@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./assets/logo.png";
+import logo from "Assets/images/logo.png";
 import {Action} from "elv-components-js";
 
 const GettingStarted = ({Login}) => {

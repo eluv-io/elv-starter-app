@@ -1,6 +1,6 @@
 import { makeObservable, observable, action } from "mobx";
 
-class RootStoreImpl {
+class RootStore {
     loggedIn = false;
     userProfile = {}
     walletClient = {};
@@ -28,5 +28,6 @@ class RootStoreImpl {
     }
 }
 
-export const RootStore = new RootStoreImpl();
+export const rootStore = new RootStore();
 
+window.rootStore = rootStore;

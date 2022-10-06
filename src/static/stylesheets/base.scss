@@ -19,7 +19,7 @@
 
 html,
 body {
-  color: $elv-color-text-black;
+  color: $elv-color-text-white;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -33,7 +33,7 @@ html,
 body,
 .app,
 .app-container {
-  background-color: $elv-color-bg-white;
+  background-color: $elv-color-black;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
