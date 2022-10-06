@@ -1,19 +1,38 @@
 import React from "react";
 import {Action} from "elv-components-js";
+import {observer} from "mobx-react";
 
-const Home = ({name, Logout}) => {
-
-  return (
+const Home = observer(() => {
+  const loggedOutView = (
     <>
-      <div className="spacer1"/>
-      <p className="hometext">Hello {name.split(" ")[0]},</p>
-      <p className="hometext">This project template uses and demonstrates the following Eluvio projects:</p>
-      <a href = "https://github.com/eluv-io/elv-media-wallet" target="_blank"><p className="linktext">-elv-media-wallet</p></a>
-      <a href = "https://github.com/eluv-io/elv-components-js" target="_blank"><p className="linktext" >-elv-components-js</p></a>
-      <div className="spacer1" />
-      <Action label="logout" title="Logout" type="button" className="primarybtn" onClick={Logout} children={<p className="btntext">Logout</p>} />
+      <div>You are logged out.</div>
+      <div>
+        <Action
+          label="login"
+          title="Login"
+          type="button"
+          onClick={() => rootStore.Authenticate()}
+        >
+          Login
+        </Action>
+      </div>
     </>
   );
-};
+
+  const loggedInView = (
+    <>
+      <div>You are logged in.</div>
+      <div>
+        <Action onClick={() => rootStore.Logout()}>Log out</Action>
+      </div>
+    </>
+  );
+
+  if(rootStore.loggedIn) {
+    return loggedInView;
+  } else {
+    return loggedOutView;
+  }
+});
 
 export default Home;

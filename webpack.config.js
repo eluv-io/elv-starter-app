@@ -51,7 +51,9 @@ module.exports = {
       Components: Path.resolve(__dirname, "src/components")
     },
     fallback: {
-      fs: false
+      "fs": false,
+      "stream": require.resolve("stream-browserify"),
+      "crypto": require.resolve("crypto-browserify")
     },
     extensions: [".js", ".jsx", ".scss", ".png", ".svg"]
   },

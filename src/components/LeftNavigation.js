@@ -1,13 +1,17 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import Logo from "Assets/images/logo";
+import {appRoutes} from "../index";
 
 const LeftNavigation = () => {
   return (
     <nav className="navigation">
       <img src={Logo} />
-      <NavLink to={"/"} className="navigation__link">Home</NavLink>
-      <NavLink to={"/components"} className="navigation__link">Components</NavLink>
+      {
+        appRoutes.map(({path, label}) => (
+          <NavLink to={path} key={path} className={"navigation__link"}>{ label }</NavLink>
+        ))
+      }
     </nav>
   );
 };
