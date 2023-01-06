@@ -36,6 +36,9 @@ class RootStore {
         network: EluvioConfiguration.network,
         mode: EluvioConfiguration.mode
       });
+
+      window.walletClient = this.walletClient;
+      window.client = this.client;
     } catch(error) {
       console.error("Failed to initialize application");
       console.error(error);
