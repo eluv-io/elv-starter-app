@@ -68,3 +68,9 @@ main {
     opacity: 0.8;
   }
 }
+
+.basic-link {
+  color: $blue;
+  cursor: pointer;
+  text-decoration: underline;
+}

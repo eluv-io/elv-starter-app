@@ -7,14 +7,14 @@ import "Assets/stylesheets/app.scss";
 import * as Stores from "./stores";
 import LeftNavigation from "Components/LeftNavigation";
 import Home from "Components/Home";
-import Components from "Components/Components";
 import {PageLoader} from "Components/Loader";
+import GettingStarted from "Components/GettingStarted";
 
 const rootElement = ReactDOM.createRoot(document.getElementById("app"));
 
 export const appRoutes = [
   {path: "/", Component: <Home />, label: "Home"},
-  {path: "/components", Component: <Components />, label: "Components"}
+  {path: "/components", Component: <GettingStarted />, label: "Getting Started"}
 ];
 
 const App = observer(() => {
