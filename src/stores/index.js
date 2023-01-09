@@ -1,6 +1,6 @@
 import {makeObservable, flow, configure, observable} from "mobx";
-import {ElvClient} from "@eluvio/elv-client-js";
 import {ElvWalletClient} from "@eluvio/elv-client-js";
+import {FrameClient} from "@eluvio/elv-client-js/src/FrameClient";
 
 // Force strict mode so mutations are only allowed within actions.
 configure({
@@ -28,17 +28,27 @@ class RootStore {
 
   Initialize = flow(function * () {
     try {
-      this.client = yield ElvClient.FromConfigurationUrl({
-        configUrl: EluvioConfiguration["config-url"]
+      // Determine whether your application needs FrameClient or
+      // ElvWalletClient
+
+      // FrameClient is a client that looks like ElvClient but, under the
+      // hood, passes messages to another frame with an actual ElvClient
+      //
+      this.client = new FrameClient({
+        target: window.parent,
+        timeout: 30
       });
 
+      // ElvWalletClient is a standalone client for using Eluvio Media
+      // Wallet functionality
+      //
       this.walletClient = yield ElvWalletClient.Initialize({
         network: EluvioConfiguration.network,
         mode: EluvioConfiguration.mode
       });
 
-      window.walletClient = this.walletClient;
       window.client = this.client;
+      window.walletClient = this.walletClient;
     } catch(error) {
       console.error("Failed to initialize application");
       console.error(error);
