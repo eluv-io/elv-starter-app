@@ -13,11 +13,19 @@ A project template for creating an Eluvio application using React, Mobx, and elv
 
 Clone the repo. We recommend making use of the following flags:
 ```
-git clone --depth <depth> -b <branch> <repo_url>
+git clone --depth <number_of_commits_to_clone> -b <branch> <repo_url> <new_name>
 ```
 - `--depth <depth>` is the amount of commits to include. In order to avoid copying the history of this repository, we recommend `--depth 1`.
 - `-b <branch>` is the name of the branch that you would like to clone from, i.e., `main` or `develop`.
-- `repo_url` is the url of your repository.
+- `repo_url` is the url of this repository.
+- `new_name` is what you would like to name the project.
+
+#### Updating Origin
+
+Update the origin remote to your repository url.
+```
+git remote set-url origin git://new_repo_url
+```
 
 #### Configuration
 
