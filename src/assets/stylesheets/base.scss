@@ -1,3 +1,5 @@
+@use "colors";
+
 * {
   -webkit-overflow-scrolling: touch;
 
@@ -7,19 +9,19 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: $gray3;
+    background: colors.$gray-30;
     opacity: 1;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: $gray3;
+    background-color: colors.$gray-30;
     opacity: 1;
   }
 }
 
 html,
 body {
-  color: $black;
+  color: colors.$black-10;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -33,7 +35,7 @@ html,
 body,
 .app,
 .app-container {
-  background-color: $white;
+  background-color: colors.$white-10;
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -52,9 +54,9 @@ main {
 }
 
 .primary-button {
-  background-color: $blue;
-  border: 1px solid rgba($blue, 70%);
-  color: $white;
+  background-color: colors.$blue-10;
+  border: 1px solid rgba(colors.$blue-10, 70%);
+  color: colors.$white-10;
   cursor: pointer;
   min-height: 35px;
   min-width: 7.5rem;
@@ -70,7 +72,7 @@ main {
 }
 
 .basic-link {
-  color: $blue;
+  color: colors.$blue-10;
   cursor: pointer;
   text-decoration: underline;
 }

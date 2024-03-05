@@ -1,15 +1,22 @@
-.idea/
-
-**.DS_STORE
-
+# Dependencies
 node_modules/
 
-dist/*
-!*/.keep
+# Production
+dist
+dist-ssr
+*.local
 
+# Configuration
 configuration.js
 
-deploy.sh
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-scratch/
-!.keep

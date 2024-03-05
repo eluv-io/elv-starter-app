@@ -1,0 +1,10 @@
+{
+  "comment": "Keep synchronized with vite config",
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

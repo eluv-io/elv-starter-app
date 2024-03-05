@@ -4,19 +4,18 @@ A project template for creating an Eluvio application using React, Mobx, and elv
 
 ### Prerequisites
 
-- Node.js version 16 or 18
-- NPM 8 or higher
+- Node.js version 16 or higher
 
 ### Setup
 
 #### Cloning
 
-Clone the repo. We recommend making use of the following flags:
+Clone the repo. Refer to the recommended flags below:
 ```
 git clone --depth <number_of_commits_to_clone> -b <branch> <repo_url> <new_name>
 ```
 - `--depth <depth>` is the amount of commits to include. In order to avoid copying the history of this repository, we recommend `--depth 1`.
-- `-b <branch>` is the name of the branch that you would like to clone from, i.e., `main` or `develop`.
+- `-b <branch>` is the name of the branch that you would like to clone from, i.e., `main`.
 - `repo_url` is the url of this repository.
 - `new_name` is what you would like to name the project.
 
@@ -29,18 +28,19 @@ git remote set-url origin git://new_repo_url
 
 #### Configuration
 
-Create a file named `configuration.js` in the root of your project.
+Create a file named `configuration.js` in the root of your project to store environment variables.
 ```
 elv-starter-app
 ├── configuration.js
 └── src
 ```
 
-By default, WalletClient and ElvClient are initialized in the RootStore, which require the following configuration:
+Client
+
+By default, both WalletClient and FrameClient are initialized in the RootStore. Use WalletClient for Media Wallet authentication. Use FrameClient to use [Eluvio Core JS](https://github.com/eluv-io/elv-core-js) as an account management wrapper.
+WalletClient requires the following configuration:
 ```
 const EluvioConfiguration = {
-  "config-url": <node-config-url>,
-
   "network": "main" | "demo",
   "mode": "staging" | "production"
 };

@@ -1,0 +1,20 @@
+@use "colors";
+
+.side-navigation {
+  background-color: gray;
+
+  &__link {
+    min-height: 45px;
+    padding: 15px;
+
+    &.active {
+      p {
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      background: colors.$gray-20;
+    }
+  }
+}

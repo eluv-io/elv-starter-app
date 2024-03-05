@@ -1,4 +1,4 @@
-import {makeObservable, flow, configure, observable} from "mobx";
+import {flow, configure, makeAutoObservable} from "mobx";
 import {ElvWalletClient} from "@eluvio/elv-client-js";
 import {FrameClient} from "@eluvio/elv-client-js/src/FrameClient";
 
@@ -10,20 +10,15 @@ configure({
 class RootStore {
   client;
   walletClient;
-  loggedIn = false;
-  userProfile;
+  authenticated = false;
   loaded = false;
 
   constructor() {
-    makeObservable(this, {
-      client: observable,
-      loggedIn: observable,
-      userProfile: observable,
-      walletClient: observable,
-      loaded: observable
-    });
+    makeAutoObservable(this);
 
     this.Initialize();
+    this.Authenticate = this.Authenticate.bind(this);
+    this.Logout = this.Logout.bind(this);
   }
 
   Initialize = flow(function * () {
@@ -36,14 +31,18 @@ class RootStore {
       //
       this.client = new FrameClient({
         target: window.parent,
-        timeout: 30
+        timeout: 60
       });
 
       // ElvWalletClient is a standalone client for using Eluvio Media
       // Wallet functionality
       //
-      this.walletClient = yield ElvWalletClient.Initialize({
+
+      this.walletClient = yield ElvWalletClient.Initialize(
+        {
+        // eslint-disable-next-line no-undef
         network: EluvioConfiguration.network,
+        // eslint-disable-next-line no-undef
         mode: EluvioConfiguration.mode
       });
 
@@ -63,7 +62,7 @@ class RootStore {
         method: "popup"
       });
 
-      this.loggedIn = true;
+      this.authenticated = true;
     } catch(error) {
       console.error(error);
     }
@@ -71,8 +70,7 @@ class RootStore {
 
   Logout = flow(function * () {
     yield this.walletClient.LogOut();
-    this.loggedIn = false;
-    this.userProfile = {};
+    this.authenticated = false;
   });
 }
 
